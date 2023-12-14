@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container d-flex justify-content-between">
+        <div><h1>Welcome, {{user.first_name}}</h1></div>
+        <div>
+            <ul class="d-flex list-unstyled gap-5">
+                <li><a href="/back_to_recipes">Back to recipes</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mt-3 mb-3 p-5 alert-danger">
+        <div class="d-flex justify-content-between">
+            <h2>{{recipe.name}}</h2>
+            <h4>Posted by: {{ recipe.user.first_name }}</h4>
+        </div>
+        <div class="border border-dark shadow p-3 mb-5 bg-body rounded mt-5">
+            <p>Description: {{recipe.description}}</p>
+            <hr>
+            <p>Under 30 minutes?: {{recipe.under}}</p>
+            <hr>
+            <p>Instructions: {{recipe.instructions}}</p>
+            <hr>
+            <p>Date made: {{recipe.created_at}}</p>
+        </div>
+    </div>
+</body>
+</html>
